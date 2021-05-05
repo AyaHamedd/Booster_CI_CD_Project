@@ -20,7 +20,7 @@ pipeline {
         }
         stage('CD') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'mypass', usernameVariable: 'myname')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'username')]) {
                 sh """
                     docker run -d -p 3001:8000 ayahamedd/myimage:1.0
                 """
