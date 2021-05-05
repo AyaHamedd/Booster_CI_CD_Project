@@ -11,7 +11,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'mypass', usernameVariable: 'myname')]) {
                 sh """
-                docker build . -t AyaHamedd/myimage:1.0
+                docker build . -t ayahamedd/myimage:1.0
                 docker login --username ${myname} --password ${mypass}
                 docker push ayahamedd/myimage:1.0
                 """
