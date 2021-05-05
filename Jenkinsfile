@@ -25,6 +25,7 @@ pipeline {
                     docker run -d -p 3001:8000 ayahamed/myimage:1.0
                 """
                 }
+                }
             post {
             	success {
             	slackSend (color: "#008000",message: "pipeline is done")
@@ -33,5 +34,3 @@ pipeline {
             }
         }
     }
-}
-
