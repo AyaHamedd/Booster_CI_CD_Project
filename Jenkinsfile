@@ -11,9 +11,9 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'mypass', usernameVariable: 'myname')]) {
                 sh """
-                docker build . -t ayahamedd/myimage:1.0
+                docker build . -t ayahamed/myimage:1.0
                 docker login --username ${myname} --password ${mypass}
-                docker push ayahamedd/myimage:1.0
+                docker push ayahamed/myimage:1.0
                 """
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'username')]) {
                 sh """
-                    docker run -d -p 3001:8000 ayahamedd/myimage:1.0
+                    docker run -d -p 3001:8000 ayahamed/myimage:1.0
                 """
                 }
             post {
