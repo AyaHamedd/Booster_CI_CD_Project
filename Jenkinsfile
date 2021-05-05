@@ -13,7 +13,7 @@ pipeline {
                 sh """
                 docker build . -t AyaHamedd/myimage:1.0
                 docker login --username ${myname} --password ${mypass}
-                docker push AyaHamedd/myimage:1.0
+                docker push ayahamedd/myimage:1.0
                 """
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'mypass', usernameVariable: 'myname')]) {
                 sh """
-                    docker run -d -p 3001:8000 AyaHamedd/myimage:1.0
+                    docker run -d -p 3001:8000 ayahamedd/myimage:1.0
                 """
                 }
             post {
