@@ -22,7 +22,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'username')]) {
                 sh """
-                    docker run -d -p 3001:8000 ayahamed/myimage:1.0
+                    docker run -d -p 3003:8000 ayahamed/myimage:1.0
                 """
                 }
                 }
